@@ -2,33 +2,31 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 import Nav from "./components/Nav"
 import Main from "./pages/Main";
-import { BrowserRouter as Router } from "react-router-dom";
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PlayersList from "./pages/PlayersList"
 import PlayersDetail from "./pages/PlayersDetail"
 
 
 
 function App() {
+  // State
   const [players, setPlayers] = useState(null)
 
-function getPlayers() {
-  fetch('https://www.balldontlie.io/api/v1/players')
-  .then((res) => {
-    console.log('res 1', res);
-    return res.json()
-  })
-  .then((res) => {
-    console.log('res 2', res)
-    setPlayers(res.data);
-  })
-}
+  // Effects
+  useEffect(() => {
+    getPlayers();
+  }, [])
 
-useEffect(() => {
-   getPlayers();
-}, [])
-
-console.log('players', players);
+  // Getters
+  function getPlayers() {
+    fetch('https://www.balldontlie.io/api/v1/players')
+    .then((res) => {
+      return res.json()
+    })
+    .then((res) => {
+      setPlayers(res.data);
+    })
+  }
 
   return (
     <div className="App">
@@ -36,8 +34,8 @@ console.log('players', players);
         <Nav />
         <Routes >
           <Route index element= {<Main />} />
-          <Route path="/Playerslist/" element={<PlayersList />} />
-          <Route path="/Playersdetail/" element={<PlayersDetail />} />
+          <Route path="/Playerslist/" element={<PlayersList players={players} />} />
+          <Route path="/Playersdetail/:id" element={<PlayersDetail />} players={players} />
         </Routes>
       </Router>
     </div>
