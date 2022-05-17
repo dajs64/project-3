@@ -1,23 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
+import Nav from "./components/Nav"
+import Main from "./pages/Main";
+import { Routes, Route } from "react-router-dom";
+import PlayersList from "./pages/PlayersList"
+import PlayersDetail from "./pages/PlayersDetail"
+
+
 
 function App() {
+
+function getPlayers() {
+  const [players, setPlayers] = useState(null)
+  fetch('https://www.balldontlie.io/api/v1/players')
+  .then((res) => res.json())
+  .then((res) => setPlayers(res.results))
+}
+
+useEffect(() => {
+   usePlayers();
+}, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       <Nav />
+      <Routes >
+        <Route path="/" element={<App />} >
+        <Route index element= {<Main />} />
+        <Route path="/Playerslist/" element={<PlayersList />} />
+        <Route path="/Playersdetail/" element={<PlayersDetail />} />
+        </Route>
+      </Routes>
     </div>
   );
 }

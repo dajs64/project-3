@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router";
 import axios from "axios"
 
-const playerList = ()=>{
+const PlayersList = ()=>{
   const[state,setState] = useState([])
   useEffect(()=>{
       const fetchData = async()=>{
@@ -19,3 +19,5 @@ const playerList = ()=>{
     <h1>TESTE PLAYERS</h1>
   )
 }
+
+export default PlayersList
