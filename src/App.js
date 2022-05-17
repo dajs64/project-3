@@ -14,15 +14,22 @@ function App() {
 
 function getPlayers() {
   fetch('https://www.balldontlie.io/api/v1/players')
-  .then((res) => res.json())
-  .then((res) => setPlayers(res.results))
+  .then((res) => {
+    console.log('res 1', res);
+    return res.json()
+  })
+  .then((res) => {
+    console.log('res 2', res)
+    setPlayers(res.data);
+  })
 }
 
 useEffect(() => {
    getPlayers();
 }, [])
 
-console.log('players', players)
+console.log('players', players);
+
   return (
     <div className="App">
       <Router>

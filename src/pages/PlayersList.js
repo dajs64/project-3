@@ -1,23 +1,44 @@
+// Imports
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import { useParams } from "react-router";
-import axios from "axios"
+import axios from "axios";
 
-const PlayersList = ()=>{
-  const[state,setState] = useState([])
-  useEffect(()=>{
-      const fetchData = async()=>{
-          const results = await axios ('https://www.balldontlie.io/api/v1/players')
-      
-          setState(results.data)
-          console.log(results.data)
-          
-      }
-      fetchData()
-  },[])
+// Component
+const PlayersList = (props) => {
+  // State
+  const [players, setPlayers] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Effects
+  useEffect(() => {
+    fetchPlayers();
+  }, [])
+
+  // Getters
+  async function fetchPlayers () {
+    const results = await axios ('https://www.balldontlie.io/api/v1/players');
+    console.log('results', results.data.data);
+    setPlayers(results.data.data);
+    setIsLoading(false);
+  }
+
+  if (isLoading) {
+    return <img className="loading" src="https://c.tenor.com/hlKEXPvlX48AAAAi/loading-loader.gif" alt='loading gif' />
+  }
+  
   return (
-    <h1>TESTE PLAYERS</h1>
+    <div>
+      <h1>PLAYERS</h1>
+      {players.map((player, idx) => {
+        return (
+          <Link key={idx} to={`/${PlayersList}`} >
+            <h2>{player.first_name} {player.last_name}</h2>
+          </Link>
+        )
+      })}
+    </div>
   )
-}
+};
 
-export default PlayersList
+export default PlayersList;
