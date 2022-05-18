@@ -34,9 +34,15 @@ const PlayersDetail = (props) => {
   }
    
   const loaded = () => (
+    <div>
     <h1>
-      {player.first_name}
+      {player.first_name} 
     </h1>
+    <p><img className="team-logo" src={`../teams/${player.team.abbreviation}.png`} />  {player.team.full_name}</p>
+    <p>Height: {player.height_feet}' {player.height_inches}"</p>
+    <p>Weight: {player.weight_pounds}lbs</p>
+    <p>Position: {player.position}</p>
+    </div>
   );
 
   const loading = () => (

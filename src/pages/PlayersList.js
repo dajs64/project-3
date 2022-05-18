@@ -20,7 +20,7 @@ const PlayersList = (props) => {
   console.log('players', players);
   
   if (isLoading) {
-    return <img className="loading" src="https://c.tenor.com/hlKEXPvlX48AAAAi/loading-loader.gif" alt='loading gif' />
+    return <img className="loading" src="https://i.gifer.com/origin/f3/f3a9e5213f627d35642165d824199e82_w200.webp" alt='loading gif' />
   }
   
   return (
@@ -30,6 +30,7 @@ const PlayersList = (props) => {
         return (
           <Link key={idx} to={`/Playersdetail/${player.id}`} >
             <h2>{player.first_name} {player.last_name}</h2>
+
           </Link>
         )
       })}
