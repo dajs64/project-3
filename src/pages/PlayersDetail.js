@@ -34,18 +34,17 @@ const PlayersDetail = (props) => {
   }
    
   const loaded = () => (
-    <div>
-    <h1>
-      {player.first_name}
-      <p></p>
-      {player.last_name} 
-    </h1>
-    <div className="card">
-    <p><img className="team-logo" src={`../teams/${player.team.abbreviation}.png`} />  {player.team.full_name}</p>
-    <p className="height">Height: {player.height_feet}' {player.height_inches}"</p>
-    <p className="weight">Weight: {player.weight_pounds}lbs</p>
-    <p className="position">Position: {player.position}</p>
-    </div>
+
+    <div className="card-border">
+      <p>
+        <img className="team-logo" src={`../teams/${player.team.abbreviation}.png`} />  {player.team.full_name}
+      </p>
+      <p className="height">Height: {player.height_feet}' {player.height_inches}"</p>
+      <p className="weight">Weight: {player.weight_pounds}lbs</p>
+      <p className="position">Position: {player.position}</p>
+      <h5>
+        {player.first_name}&nbsp;{player.last_name} 
+      </h5>
     </div>
   );
 

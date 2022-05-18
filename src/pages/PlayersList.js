@@ -25,7 +25,9 @@ const PlayersList = (props) => {
   
   return (
     <div>
+      <div className='players'>
       <h1>PLAYERS</h1>
+      </div>
       {players.map((player, idx) => {
         return (
           <Link key={idx} to={`/Playersdetail/${player.id}`} >
