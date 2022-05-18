@@ -1,10 +1,16 @@
-*{
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+.card {
+  background-image: url("https://www.pngkit.com/png/full/349-3492944_baseball-card-2016-baseball-card-template.png");
+  background-size: 300px;
+  background-repeat: no-repeat;
+  justify-content: ;
 }
+
 
 .team-logo {
   width: 100px;
 }
+
+.stature {
+  justify-content: baseline;
+}
+
