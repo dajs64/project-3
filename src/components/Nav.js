@@ -4,12 +4,12 @@ import { Link } from "react-router-dom"
 function Nav (props) {
 	return (
 		<div className="nav">
-			<Link to="/">
+			{/* <Link to="/">
 				<button>Next Page</button>
-			</Link>
-			<h1>Welcome</h1>
+			</Link> */}
+			<h1 className="p1">Players</h1>
 			<Link to="/Playerslist">
-				<button>Players List</button>
+				<button>Back</button>
 			</Link>
 		</div>
 	)

@@ -51,7 +51,7 @@ const PlayersDetail = (props) => {
   const loading = () => (
     <h1>Loading...</h1>
   );
-  // if coin has data, run the loaded function, otherwise, run loading
+
   return player ? loaded() : loading();
 };
 export default PlayersDetail;
