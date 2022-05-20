@@ -7,8 +7,11 @@ function Nav (props) {
 			{/* <Link to="/">
 				<button>Next Page</button>
 			</Link> */}
+      <div className="heading-wrapper">
+
 			<h1 className="p1">Players</h1>
-			<Link to="/Playerslist">
+      </div>
+			<Link className="nav-button" to="/Playerslist">
 				<button>Back</button>
 			</Link>
 		</div>

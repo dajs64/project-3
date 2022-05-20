@@ -36,15 +36,17 @@ const PlayersDetail = (props) => {
   const loaded = () => (
 
     <div className="card-border">
-      <p>
+      {/* <p> */}
+      <div className="card-content">
         <img className="team-logo" src={`../teams/${player.team.abbreviation}.png`} />  {player.team.full_name}
-      </p>
+      {/* </p> */}
       <p className="height">Height: {player.height_feet}' {player.height_inches}"</p>
       <p className="weight">Weight: {player.weight_pounds}lbs</p>
       <p className="position">Position: {player.position}</p>
       <h5>
         {player.first_name}&nbsp;{player.last_name} 
-      </h5>
+        </h5>
+      </div>
     </div>
   );
 

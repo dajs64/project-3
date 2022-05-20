@@ -5,38 +5,46 @@
   width: 300px;
   height: 380px;
   background-size: contain;
-  padding-top: 80px;
+  padding-top: 90px;
   align-items: center;
   background-repeat: no-repeat;
   position: relative;
-  margin-left: 300px;
+  justify-content: flex-start;
+  margin: 0 auto;
 }
 
-.card-border p {
-  margin-top: 5px;
-  margin-bottom: 15px;
-
+.card-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* padding-bottom: 30px; */
+  justify-content: flex-start;
+  /* border: 1px red solid; */
+  height: 90%;
 }
 
-p:first-of-type {
+/* img:first-of-type {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
-  margin-top: 20px;
+  margin-top: 10px;
   position: relative;
   font-size: 20px;
+} */
+
+.card-content p{
+ padding: 0;
+ margin: 0 0 27px 0;
 }
-
-
 .team-logo {
   justify-content: flex-start;
   /* position: relative; */
   width: 90px;
-  padding-left: 30px;
+  /* padding-left: 30px; */
   
  
 }
-
+/* 
 .stature {
   justify-content: baseline;
   
@@ -44,11 +52,11 @@ p:first-of-type {
 
 .weight {
   justify-content: flex-start;
-}
+} */
 
 .card-border h5 {
-  position: absolute;
-  bottom: 61px;
+  /* position: absolute; */
+  /* bottom: 61px; */
 }
 
 .nav {
@@ -70,25 +78,49 @@ p:first-of-type {
   display: flex;
   background-color: grey;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-height: 90vh;
   
 }
 
-.list {
-  margin-left: 330px;
-  font-size: 30px;
+.list p {
+  font-size: 56px;
   font-family: 'Times New Roman', Times, serif;
+
+}
+.players a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 30px;
 }
 
-.app {
-  /* display: flex; */
-  /* background-color: grey; */
-  font-style: normal;
- /* flex-direction: column-rev; */
+.players a:hover {
+  border-bottom: 8px solid white;
 }
 
+
+.list a {
+  color: white;
+}
+.heading-wrapper {
+  position: relative;
+  /* left: 40px; */
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
 .p1 {
   font-style: normal;
-  margin-left: 400px;
+  text-align: center;
+  /* border: 1px solid red; */
+  width: 100%;
   
+}
+
+.nav-button {
+  position: absolute;
+  right: 0%;
+  top: 25px;
 }
 

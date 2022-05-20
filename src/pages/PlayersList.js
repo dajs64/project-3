@@ -26,16 +26,16 @@ const PlayersList = (props) => {
   return (
     <div>
       <div className='players'>
-      </div>
       {players.map((player, idx) => {
         return (
           <Link key={idx} to={`/Playersdetail/${player.id}`} >
             <div className='list'>
-            <ul >{player.first_name} {player.last_name}</ul>
+            <p>{player.first_name} {player.last_name}</p>
             </div>
           </Link>
         )
       })}
+       </div>
     </div>
   )
 };
