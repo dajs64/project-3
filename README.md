@@ -30,7 +30,7 @@
 
 ## LINK 
 
-https://neon-madeleine-6138b8.netlify.app/players
+https://neon-madeleine-6138b8.netlify.app
 
 
 
